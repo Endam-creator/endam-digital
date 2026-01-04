@@ -2,98 +2,60 @@
 <html lang="fr" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="google-site-verification" content="zBPY9PV5fkLVENyEGvRO4RFaXfvTHdvlClMbk1PVcKs" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>PronoFoot Club - Le Bot Discord Foot & Pronos</title>
-    <meta name="description" content="Le QG des Stratèges Foot ! Transforme ton serveur Discord avec le PronoFoot Bot : Scores en direct Ligue 1, IA prédictive, infos mercato et concours de pronostics entre amis.">
-    <meta name="keywords" content="Bot Discord, Pronostics Foot, Ligue 1, Champions League, Paris Sportifs, PronoFoot, Endam Digital, Live Score, Bot Football">
-    <meta name="author" content="Endam Digital">
-    <meta name="robots" content="index, follow">
-
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.endam-digital.com/">
-    <meta property="og:title" content="PronoFoot Club - Le Bot Discord Ultime">
-    <meta property="og:description" content="IA, Stats Pro, Live Score et Duels. Rejoins la communauté des experts de la Ligue 1 !">
-    <meta property="og:image" content="https://www.endam-digital.com/logo.jpg">
-
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="PronoFoot Club - Bot Discord">
-    <meta name="twitter:description" content="Rejoins la compétition de pronostics sur la Ligue 1 et l'Europe.">
-    <meta name="twitter:image" content="https://www.endam-digital.com/logo.jpg">
+    <meta name="description" content="Le QG des Stratèges Foot ! Scores en direct L1, IA prédictive, duels entre amis et certificats d'humiliation. 100% Gratuit.">
+    <meta name="keywords" content="Bot Discord, Pronostics Foot, Ligue 1, Champions League, Paris Sportifs Gratuit">
+    <meta property="og:image" content="logo.jpg">
 
     <link rel="icon" type="image/jpg" href="logo.jpg">
+
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+    
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #0b0c10; color: #e5e7eb; }
         
-        /* --- UTILITAIRES VISUELS --- */
-        
+        /* Effets de verre (Glassmorphism) */
         .glass-panel {
-            background: rgba(20, 22, 28, 0.7);
+            background: rgba(20, 22, 28, 0.6);
             backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 16px;
         }
         
+        /* Tags de commande */
         .cmd-tag {
             background: #1a1c23;
             border: 1px solid #374151;
             padding: 4px 8px;
             border-radius: 6px;
-            font-family: 'Courier New', monospace;
+            font-family: monospace;
             font-weight: bold;
-            font-size: 0.9em;
             color: #2dd4bf;
         }
         .cmd-vip { color: #facc15; border-color: #854d0e; }
 
-        /* Effet Glow Logo */
-        .logo-glow {
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle, rgba(45, 212, 191, 0.3) 0%, transparent 70%);
-            z-index: -1;
-            border-radius: 50%;
-            filter: blur(40px);
+        /* Animation Glow */
+        .glow-effect {
+            box-shadow: 0 0 40px -10px rgba(45, 212, 191, 0.3);
         }
-
-        .section-title {
-            position: relative;
-            display: inline-block;
-            margin-bottom: 2rem;
-            font-weight: 800;
-            font-size: 1.875rem;
-            color: white;
-        }
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 60%;
-            height: 4px;
-            background: linear-gradient(90deg, #2dd4bf, transparent);
-            margin-top: 0.5rem;
-            border-radius: 2px;
-        }
-
-        /* AJOUT SPECIAL : Fusion du logo avec le fond */
-        .blend-logo {
-            mix-blend-mode: screen; /* Rend le noir transparent */
-            filter: brightness(1.2) contrast(1.1); /* Booste un peu les couleurs */
-        }
+        
+        /* Fusion Logo */
+        .blend-logo { mix-blend-mode: screen; filter: brightness(1.2) contrast(1.1); }
     </style>
 </head>
-<body class="overflow-x-hidden">
+<body class="overflow-x-hidden text-gray-300">
 
-    <nav class="fixed w-full z-50 bg-[#0b0c10]/95 border-b border-gray-800 backdrop-blur">
+    <nav class="fixed w-full z-50 bg-[#0b0c10]/95 border-b border-gray-800 backdrop-blur-md">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="font-black text-xl tracking-wider text-white">
-                PRONOFOOT <span class="text-teal-400">CLUB</span>
+            <div class="font-black text-xl tracking-wider text-white flex items-center gap-2">
+                <span class="text-2xl">🦁</span> PRONOFOOT <span class="text-teal-400">CLUB</span>
             </div>
             <div class="hidden md:flex gap-8 text-sm font-medium">
-                <a href="#presentation" class="hover:text-teal-400 transition">Concept</a>
-                <a href="#tuto" class="hover:text-teal-400 transition">Commandes</a>
+                <a href="#features" class="hover:text-teal-400 transition">Fonctionnalités</a>
+                <a href="#comparatif" class="hover:text-teal-400 transition">Pourquoi nous ?</a>
                 <a href="#vip" class="text-yellow-500 hover:text-yellow-300 transition">Espace VIP</a>
             </div>
             <a href="https://discord.gg/2aCUWR9b" class="bg-indigo-600 hover:bg-indigo-500 text-white px-5 py-2 rounded-lg font-bold text-sm transition shadow-lg shadow-indigo-500/20">
@@ -103,155 +65,153 @@
     </nav>
 
     <header class="pt-32 pb-20 px-6 max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center gap-12">
-        
         <div class="flex-1 text-center md:text-left">
-            <div class="inline-block px-3 py-1 rounded-full bg-teal-900/30 text-teal-400 text-xs font-bold mb-6 border border-teal-500/20">
-                🟢 LIVE SCORE INTÉGRÉ
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-900/30 text-teal-400 text-xs font-bold mb-6 border border-teal-500/20 animate-pulse">
+                <span>🔴</span> LIVE SCORE LIGUE 1 & LDC
             </div>
             
-            <h1 class="text-5xl md:text-7xl font-black text-white mb-6 leading-tight">
-                Le QG des <br>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-indigo-500">Stratèges Foot</span>
+            <h1 class="text-5xl md:text-6xl font-black text-white mb-6 leading-tight">
+                Arrête de parier ton argent.<br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-indigo-500">Parie ta réputation.</span>
             </h1>
             
             <p class="text-lg text-gray-400 mb-8 max-w-lg mx-auto md:mx-0 leading-relaxed">
-                Plus qu'un simple bot de pronostics. Rejoins une communauté active, suis les matchs en direct et prouve ta valeur sur la <strong>Ligue 1</strong> et la <strong>Ligue des Champions</strong>.
+                Le Bot Discord qui transforme ton serveur en Bar des Sports. 
+                IA Prédictive, Duels entre potes et ambiance garantie. 
+                <strong>100% Gratuit.</strong>
             </p>
             
             <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                <a href="#tuto" class="bg-white text-black hover:bg-gray-200 px-8 py-3 rounded-xl font-bold transition">
-                    Voir le Guide
+                <a href="https://discord.gg/2aCUWR9b" class="bg-white text-black hover:bg-gray-200 px-8 py-4 rounded-xl font-bold transition flex items-center justify-center gap-2">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
+                    Ajouter à Discord
                 </a>
-                <a href="#vip" class="glass-panel hover:bg-gray-800 text-white px-8 py-3 rounded-xl font-bold transition">
-                    Offre VIP
+                <a href="#features" class="glass-panel hover:bg-gray-800 text-white px-8 py-4 rounded-xl font-bold transition">
+                    Découvrir
                 </a>
             </div>
         </div>
 
-        <div class="flex-1 flex justify-center md:justify-end relative">
-            <div class="relative w-72 h-72 md:w-96 md:h-96">
-                <div class="logo-glow"></div>
-                <img src="logo.jpg" alt="Logo PronoFoot" class="relative w-full h-full object-contain blend-logo">
-            </div>
+        <div class="flex-1 flex justify-center relative">
+            <div class="absolute inset-0 bg-teal-500/20 blur-[100px] rounded-full"></div>
+            <img src="logo.jpg" alt="Logo Bot" class="relative w-64 h-64 md:w-80 md:h-80 object-contain rounded-2xl shadow-2xl glow-effect rotate-3 hover:rotate-0 transition duration-500">
         </div>
     </header>
 
-    <section id="presentation" class="py-16 px-6 bg-[#0f1014]">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-white mb-4">Bienvenue au Bar des Sports 2.0</h2>
-                <p class="text-gray-400 max-w-2xl mx-auto">Le PronoFoot Bot n'est pas juste un calculateur. C'est le cœur de notre serveur Discord.</p>
+    <section id="comparatif" class="py-20 px-6 bg-[#0f1014]">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-white mb-4">Pourquoi choisir <span class="text-teal-400">PronoFoot Club</span> ?</h2>
+                <p class="text-gray-400">Ne te contente pas d'un bot robotique. Choisis l'expérience supporter.</p>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="glass-panel p-8 text-center hover:-translate-y-2 transition duration-300">
-                    <div class="text-4xl mb-4">🔴</div>
-                    <h3 class="text-xl font-bold text-white mb-2">Scores en Direct</h3>
-                    <p class="text-sm text-gray-400">Ne rate aucun but. Le bot affiche les scores de Ligue 1 et LDC en temps réel dans le salon dédié.</p>
-                </div>
-                <div class="glass-panel p-8 text-center hover:-translate-y-2 transition duration-300">
-                    <div class="text-4xl mb-4">🎙️</div>
-                    <h3 class="text-xl font-bold text-white mb-2">Salons Vocaux</h3>
-                    <p class="text-sm text-gray-400">Rejoins le canal "Bar des Sports" les soirs de match pour commenter l'action en direct avec la communauté.</p>
-                </div>
-                <div class="glass-panel p-8 text-center hover:-translate-y-2 transition duration-300">
-                    <div class="text-4xl mb-4">🎁</div>
-                    <h3 class="text-xl font-bold text-white mb-2">Récompenses</h3>
-                    <p class="text-sm text-gray-400">Joue pour le fun ou abonne-toi pour tenter de gagner des maillots et des cartes cadeaux.</p>
-                </div>
+            <div class="overflow-x-auto rounded-2xl border border-gray-800 shadow-2xl">
+                <table class="w-full text-left border-collapse min-w-[600px]">
+                    <thead>
+                        <tr>
+                            <th class="p-6 bg-[#14161c] text-gray-400 font-medium uppercase tracking-wider w-1/3">Fonctionnalités</th>
+                            <th class="p-6 bg-teal-900/20 border-t-4 border-teal-500 text-xl font-black text-white w-1/3">
+                                🦁 PronoFoot Club
+                            </th>
+                            <th class="p-6 bg-[#14161c] text-xl font-bold text-gray-500 w-1/3">
+                                🤖 Les Autres Bots
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-800 bg-[#0b0c10]">
+                        <tr class="hover:bg-gray-800/50 transition">
+                            <td class="p-6 font-bold text-gray-200">Spécialité</td>
+                            <td class="p-6 bg-teal-900/10">
+                                <div class="flex items-center gap-3">
+                                    <span class="text-2xl">🇫🇷</span>
+                                    <span class="font-bold text-teal-400">Expert Ligue 1 & LDC</span>
+                                </div>
+                                <p class="text-xs text-gray-400 mt-1">On parle français ici !</p>
+                            </td>
+                            <td class="p-6 opacity-60">
+                                <div class="flex items-center gap-3">
+                                    <span class="text-2xl">🌍</span>
+                                    <span>Générique / Anglais</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-gray-800/50 transition">
+                            <td class="p-6 font-bold text-gray-200">Gameplay</td>
+                            <td class="p-6 bg-teal-900/10">
+                                <div class="flex items-center gap-3">
+                                    <span class="text-2xl">⚔️</span>
+                                    <span class="font-bold text-white">Duels 1v1 & Paris</span>
+                                </div>
+                                <p class="text-xs text-gray-400 mt-1">Prouve que tu es meilleur que tes potes.</p>
+                            </td>
+                            <td class="p-6 opacity-60">
+                                <div class="flex items-center gap-3">
+                                    <span class="text-2xl">😴</span>
+                                    <span>Résultats passifs</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-gray-800/50 transition">
+                            <td class="p-6 font-bold text-gray-200">Ambiance</td>
+                            <td class="p-6 bg-teal-900/10">
+                                <div class="flex items-center gap-3">
+                                    <span class="text-2xl">🤬</span>
+                                    <span class="font-bold text-white">Coach Trash-Talker</span>
+                                </div>
+                                <p class="text-xs text-gray-400 mt-1">Le bot te vanne si tu perds.</p>
+                            </td>
+                            <td class="p-6 opacity-60">
+                                <div class="flex items-center gap-3">
+                                    <span class="text-2xl">🤖</span>
+                                    <span>Robotique & Froid</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-gray-800/50 transition">
+                            <td class="p-6 font-bold text-gray-200">Infos Exclusives</td>
+                            <td class="p-6 bg-teal-900/10">
+                                <div class="flex items-center gap-3">
+                                    <span class="text-2xl">🕵️‍♂️</span>
+                                    <span class="font-bold text-white">Scanner Mercato</span>
+                                </div>
+                                <p class="text-xs text-gray-400 mt-1">Notifs blessures & rumeurs en temps réel.</p>
+                            </td>
+                            <td class="p-6 opacity-60">
+                                <div class="flex items-center gap-3">
+                                    <span class="text-2xl">❌</span>
+                                    <span>Rien</span>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </section>
 
-    <section id="tuto" class="py-20 px-6 max-w-6xl mx-auto">
-        <h2 class="section-title">📘 Le Guide des Commandes</h2>
-
-        <div class="mb-16">
-            <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-                <span class="bg-teal-500 rounded p-1 text-sm">A</span> Jouer & Parier
-            </h3>
-            <div class="grid gap-6">
-                
-                <div class="glass-panel p-6">
-                    <div class="flex justify-between items-start mb-2">
-                        <span class="cmd-tag">!serie</span>
-                        <span class="text-xs bg-green-900 text-green-300 px-2 py-1 rounded">Recommandé</span>
-                    </div>
-                    <p class="text-gray-300 mb-4">La façon la plus rapide de jouer. Le bot te propose tous les matchs ouverts à la suite.</p>
-                    <ul class="text-sm text-gray-400 space-y-2 border-l-2 border-gray-700 pl-4">
-                        <li><span class="text-white">!serie</span> : Lance tous les matchs disponibles.</li>
-                        <li><span class="text-white">!serie L1</span> : Uniquement la Ligue 1.</li>
-                        <li><span class="text-white">!serie LDC</span> : Uniquement la Ligue des Champions.</li>
-                    </ul>
+    <section id="features" class="py-20 px-6 max-w-6xl mx-auto">
+        <h2 class="section-title text-3xl font-bold mb-12 border-b-4 border-teal-500 inline-block pb-2">🔥 Les Fonctionnalités qui Tuent</h2>
+        
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="glass-panel p-8 relative overflow-hidden group hover:border-teal-500/50 transition">
+                <div class="absolute top-0 right-0 bg-teal-500 text-black font-bold px-3 py-1 text-xs rounded-bl-lg">NEW</div>
+                <div class="text-5xl mb-4">📸</div>
+                <h3 class="text-xl font-bold text-white mb-2">Le Certificat d'Humiliation</h3>
+                <p class="text-gray-400 mb-4">Tu as battu ton pote avec une grosse mise ? Le bot génère automatiquement une image <strong class="text-teal-400">"Certifié Pigeon"</strong> avec son avatar dessus.</p>
+                <div class="text-xs bg-gray-800 p-3 rounded border border-gray-700 font-mono text-gray-300">
+                    Bot: 📸 FLASH SPÉCIAL pour @JeanKevin...
                 </div>
+            </div>
 
-                <div class="glass-panel p-6">
-                    <div class="flex justify-between items-start mb-2">
-                        <span class="cmd-tag">!pari [Match] [Score]</span>
-                    </div>
-                    <p class="text-gray-300 text-sm">Pour parier sur un match spécifique manuellement.</p>
-                    <p class="text-xs text-gray-500 mt-2">Exemple : <code class="text-gray-300">!pari PSG-OM 2-1</code></p>
-                </div>
-
-                <div class="glass-panel p-6">
-                    <div class="flex justify-between items-start mb-2">
-                        <span class="cmd-tag">!matchs</span>
-                    </div>
-                    <p class="text-gray-300 text-sm">Affiche le calendrier des matchs à venir, triés par compétition et par heure.</p>
+            <div class="glass-panel p-8 group hover:border-red-500/50 transition">
+                <div class="text-5xl mb-4">🤬</div>
+                <h3 class="text-xl font-bold text-white mb-2">Le Coach Trash-Talker</h3>
+                <p class="text-gray-400 mb-4">Si ton taux de victoire passe sous les 20%, l'IA arrête d'être gentille. Prépare-toi à te faire roaster devant tout le serveur.</p>
+                <div class="text-xs bg-gray-800 p-3 rounded border border-gray-700 font-mono text-gray-300">
+                    Coach: "Frérot, arrête le foot. Mets-toi au curling. T'as raté 8 pronos de suite..."
                 </div>
             </div>
         </div>
-
-        <div class="mb-16">
-            <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-                <span class="bg-indigo-500 rounded p-1 text-sm">B</span> Suivi & Résultats
-            </h3>
-            <div class="grid md:grid-cols-2 gap-6">
-                <div class="glass-panel p-6">
-                    <span class="cmd-tag block mb-3 w-fit">!mesparis</span>
-                    <p class="text-sm text-gray-400">Affiche la liste de tes paris en attente. Pratique pour vérifier si tu n'as rien oublié.</p>
-                </div>
-                <div class="glass-panel p-6">
-                    <span class="cmd-tag block mb-3 w-fit">!scores</span>
-                    <p class="text-sm text-gray-400">Affiche les résultats des matchs des dernières 48h et les scores en direct.</p>
-                </div>
-                <div class="glass-panel p-6">
-                    <span class="cmd-tag block mb-3 w-fit">!profil</span>
-                    <p class="text-sm text-gray-400">Ta carte d'identité de joueur : Points totaux, Grade actuel et Palmarès (Étoiles).</p>
-                </div>
-                <div class="glass-panel p-6">
-                    <span class="cmd-tag block mb-3 w-fit">!bilan</span>
-                    <p class="text-sm text-gray-400">Fais le point sur ta semaine (7 derniers jours glissants). Idéal pour voir si tu es en bénéfice.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="mb-16">
-            <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-                <span class="bg-purple-500 rounded p-1 text-sm">C</span> Compétition
-            </h3>
-            <div class="glass-panel p-6 mb-6">
-                <span class="cmd-tag mb-3 inline-block">!classement</span>
-                <p class="text-sm text-gray-400 mb-4">Affiche le Top 20 du classement général.</p>
-                <div class="flex gap-2 text-xs">
-                    <span class="bg-gray-800 px-2 py-1 rounded">Variantes :</span>
-                    <code class="text-purple-300">!classement L1</code>
-                    <code class="text-purple-300">!classement LDC</code>
-                </div>
-            </div>
-            
-            <div class="grid md:grid-cols-2 gap-6">
-                <div class="glass-panel p-6">
-                    <span class="cmd-tag block mb-3 w-fit">!top</span>
-                    <p class="text-sm text-gray-400">Le classement du <strong>Mois en cours</strong>. C'est ici que se joue la montée en grade.</p>
-                </div>
-                <div class="glass-panel p-6">
-                    <span class="cmd-tag block mb-3 w-fit">!duel @Ami Match Mise</span>
-                    <p class="text-sm text-gray-400">Défie un joueur. Le gagnant prend les points de la mise à l'autre.<br>Ex: <code class="text-xs">!duel @Paul PSG-Lens 20</code></p>
-                </div>
-            </div>
-        </div>
-
     </section>
 
     <section id="vip" class="py-20 px-6 bg-gradient-to-b from-[#0b0c10] to-[#1a1400]">
@@ -278,10 +238,9 @@
                                         <span class="font-bold text-white">IA Expert</span>
                                         <span class="cmd-tag cmd-vip text-xs">!conseil</span>
                                     </div>
-                                    <p class="text-sm text-gray-400 mt-1">Analyse détaillée d'un match : Forme, Domicile/Extérieur et Probabilités.</p>
+                                    <p class="text-sm text-gray-400 mt-1">Analyse détaillée : Forme, Domicile/Ext. et Probabilités.</p>
                                 </div>
                             </li>
-
                             <li class="flex gap-4">
                                 <div class="mt-1 bg-yellow-500/20 p-1 rounded text-yellow-500 text-xs h-fit">✓</div>
                                 <div>
@@ -289,33 +248,24 @@
                                         <span class="font-bold text-white">Infos Insider</span>
                                         <span class="cmd-tag cmd-vip text-xs">!insider</span>
                                     </div>
-                                    <p class="text-sm text-gray-400 mt-1">Reçois en MP les blessures et compos officielles et les derniers bruits de couloirs.</p>
+                                    <p class="text-sm text-gray-400 mt-1">Alertes Mercato et Blessures filtrées en MP.</p>
                                 </div>
                             </li>
-
                             <li class="flex gap-4">
                                 <div class="mt-1 bg-yellow-500/20 p-1 rounded text-yellow-500 text-xs h-fit">✓</div>
                                 <div>
                                     <div class="flex items-center gap-2">
-                                        <span class="font-bold text-white">Coach & Stats</span>
-                                        <span class="cmd-tag cmd-vip text-xs">!statsvip</span>
+                                        <span class="font-bold text-white">Stats Avancées</span>
+                                        <span class="cmd-tag cmd-vip text-xs">!graph</span>
                                     </div>
-                                    <p class="text-sm text-gray-400 mt-1">Ton Winrate, tes Perfects et ta courbe de progression (<code class="text-yellow-600 text-xs">!graph</code>).</p>
-                                </div>
-                            </li>
-
-                            <li class="flex gap-4">
-                                <div class="mt-1 bg-yellow-500/20 p-1 rounded text-yellow-500 text-xs h-fit">✓</div>
-                                <div>
-                                    <span class="font-bold text-white">Éligibilité aux Cadeaux</span>
-                                    <p class="text-sm text-gray-400 mt-1">Seuls les VIP peuvent gagner les lots physiques (Maillots) et cartes cadeaux.</p>
+                                    <p class="text-sm text-gray-400 mt-1">Ton Winrate et ta courbe de progression mensuelle.</p>
                                 </div>
                             </li>
                         </ul>
                     </div>
 
                     <div class="bg-[#0b0c10] border border-gray-800 rounded-2xl p-8 text-center shadow-2xl">
-                        <div class="text-yellow-500 font-bold tracking-widest text-sm mb-2">ABONNEMENT VIP</div>
+                        <div class="text-yellow-500 font-bold tracking-widest text-sm mb-2">ABONNEMENT</div>
                         <div class="text-6xl font-black text-white mb-2">3€</div>
                         <div class="text-gray-500 text-sm mb-8">/ mois • sans engagement</div>
                         
