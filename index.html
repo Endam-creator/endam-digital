@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>PronoFoot Club - Le Bot Discord Foot & Pronos</title>
-    <meta name="description" content="Le QG des Stratèges Foot ! Scores en direct L1, IA prédictive, duels entre amis et certificats d'humiliation. 100% Gratuit.">
+    <meta name="description" content="Le QG des Stratèges Foot ! Scores en direct L1, IA prédictive, duels entre amis. Gagne des cadeaux en finissant 1er du classement général (VIP).">
     <meta name="keywords" content="Bot Discord, Pronostics Foot, Ligue 1, Champions League, Paris Sportifs Gratuit">
     <meta property="og:image" content="logo.jpg">
 
@@ -76,7 +76,7 @@
             </h1>
             
             <p class="text-lg text-gray-400 mb-8 max-w-lg mx-auto md:mx-0 leading-relaxed">
-                Le Bot Discord qui transforme ton serveur en Bar des Sports. 
+                Le Bot qui transforme ton Discord en <strong>Bar des Sports</strong>. 
                 IA Prédictive, Duels entre potes et ambiance garantie. 
                 <strong>100% Gratuit.</strong>
             </p>
@@ -98,7 +98,34 @@
         </div>
     </header>
 
-    <section id="comparatif" class="py-20 px-6 bg-[#0f1014]">
+    <section id="presentation" class="py-16 px-6 bg-[#0f1014]">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-white mb-4">Bienvenue au Bar des Sports 2.0</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">Le PronoFoot Bot n'est pas juste un calculateur. C'est le cœur de notre serveur Discord.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass-panel p-8 text-center hover:-translate-y-2 transition duration-300">
+                    <div class="text-4xl mb-4">🔴</div>
+                    <h3 class="text-xl font-bold text-white mb-2">Scores en Direct</h3>
+                    <p class="text-sm text-gray-400">Ne rate aucun but. Le bot affiche les scores de Ligue 1 et LDC en temps réel dans le salon dédié.</p>
+                </div>
+                <div class="glass-panel p-8 text-center hover:-translate-y-2 transition duration-300">
+                    <div class="text-4xl mb-4">🎙️</div>
+                    <h3 class="text-xl font-bold text-white mb-2">Salons Vocaux</h3>
+                    <p class="text-sm text-gray-400">Rejoins le canal "Bar des Sports" les soirs de match pour commenter l'action en direct avec la communauté.</p>
+                </div>
+                <div class="glass-panel p-8 text-center border border-yellow-500/30 hover:border-yellow-500 hover:-translate-y-2 transition duration-300">
+                    <div class="text-4xl mb-4">🎁</div>
+                    <h3 class="text-xl font-bold text-white mb-2">Lots à Gagner</h3>
+                    <p class="text-sm text-gray-400">Le <strong>1er du Classement Général</strong> (VIP uniquement) remporte un gros lot en fin de saison.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="comparatif" class="py-20 px-6 bg-[#0b0c10]">
         <div class="max-w-5xl mx-auto">
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-bold text-white mb-4">Pourquoi choisir <span class="text-teal-400">PronoFoot Club</span> ?</h2>
@@ -118,7 +145,7 @@
                             </th>
                         </tr>
                     </thead>
-                    <tbody class="divide-y divide-gray-800 bg-[#0b0c10]">
+                    <tbody class="divide-y divide-gray-800 bg-[#0f1014]">
                         <tr class="hover:bg-gray-800/50 transition">
                             <td class="p-6 font-bold text-gray-200">Spécialité</td>
                             <td class="p-6 bg-teal-900/10">
@@ -214,6 +241,52 @@
         </div>
     </section>
 
+    <section id="tuto" class="py-20 px-6 max-w-6xl mx-auto bg-[#0f1014]">
+        <h2 class="section-title text-3xl font-bold mb-12 text-white">📘 Le Guide des Commandes</h2>
+
+        <div class="grid md:grid-cols-2 gap-12">
+            <div>
+                <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                    <span class="bg-teal-500 rounded p-1 text-xs">JEU</span> Pour Parier
+                </h3>
+                <div class="space-y-4">
+                    <div class="glass-panel p-4">
+                        <span class="cmd-tag">!serie</span>
+                        <p class="text-sm text-gray-400 mt-2">La méthode rapide : le bot te propose tous les matchs en MP.</p>
+                    </div>
+                    <div class="glass-panel p-4">
+                        <span class="cmd-tag">!pari PSG-OM 2-1</span>
+                        <p class="text-sm text-gray-400 mt-2">Pari manuel simple.</p>
+                    </div>
+                    <div class="glass-panel p-4">
+                        <span class="cmd-tag">!duel @Ami Match Mise</span>
+                        <p class="text-sm text-gray-400 mt-2">Défie un pote. Le gagnant vole les points du perdant.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                    <span class="bg-indigo-500 rounded p-1 text-xs">STATS</span> Pour Gagner
+                </h3>
+                <div class="space-y-4">
+                    <div class="glass-panel p-4">
+                        <span class="cmd-tag">!top</span>
+                        <p class="text-sm text-gray-400 mt-2">Le classement du mois en cours. Idéal pour voir ta forme.</p>
+                    </div>
+                    <div class="glass-panel p-4 border border-yellow-500/20">
+                        <span class="cmd-tag">!classement</span>
+                        <p class="text-sm text-gray-400 mt-2">Le classement général de la saison. <strong class="text-yellow-500">Objectif 1ère place pour le cadeau final !</strong></p>
+                    </div>
+                    <div class="glass-panel p-4">
+                        <span class="cmd-tag">!profil</span>
+                        <p class="text-sm text-gray-400 mt-2">Tes stats, ton grade et tes étoiles.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="vip" class="py-20 px-6 bg-gradient-to-b from-[#0b0c10] to-[#1a1400]">
         <div class="max-w-5xl mx-auto">
             <div class="text-center mb-12">
@@ -255,10 +328,9 @@
                                 <div class="mt-1 bg-yellow-500/20 p-1 rounded text-yellow-500 text-xs h-fit">✓</div>
                                 <div>
                                     <div class="flex items-center gap-2">
-                                        <span class="font-bold text-white">Stats Avancées</span>
-                                        <span class="cmd-tag cmd-vip text-xs">!graph</span>
+                                        <span class="font-bold text-white">Éligibilité aux Cadeaux</span>
                                     </div>
-                                    <p class="text-sm text-gray-400 mt-1">Ton Winrate et ta courbe de progression mensuelle.</p>
+                                    <p class="text-sm text-gray-400 mt-1">Seuls les VIP peuvent remporter les lots physiques (Maillots) en fin de saison.</p>
                                 </div>
                             </li>
                         </ul>
